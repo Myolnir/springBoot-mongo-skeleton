@@ -1,0 +1,10 @@
+server:
+  port: 4567
+spring:
+  application:
+    name: SpringBootMongoApplication
+  data:
+    mongodb:
+      host: localhost
+      port: 27017
+      database: test
