@@ -14,7 +14,7 @@ apply plugin: 'spring-boot'
 
 group = 'com.myolnir'
 version = projectVersion
-description = "Runnable skeleton of spring boot and MongoDB"
+description = "Runnable skeleton for spring boot with MongoDB connection, basic controller"
 
 defaultTasks 'check'
 
@@ -24,6 +24,8 @@ repositories {
 
 dependencies {
     compile("org.springframework.boot:spring-boot-starter-data-mongodb")
+    compile("org.springframework.boot:spring-boot-starter-web")
+    compile("commons-io:commons-io:2.4")
     testCompile("org.springframework.boot:spring-boot-starter-test")
 }
 

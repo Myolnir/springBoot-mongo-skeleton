@@ -26,11 +26,23 @@ public class BasicMongoServiceTest {
     @Test
     public void when_service_called_then_object_is_stored_in_DB () {
         ObjectToSave objectToSave = new ObjectToSave();
+        objectToSave.setId("id");
         objectToSave.setFoo("foo");
         when(basicMongoRepository.save(objectToSave)).thenReturn(new ObjectToSave());
 
         basicMongoService.save(objectToSave);
 
         verify(basicMongoRepository, times(1)).save(objectToSave);
+    }
+
+    @Test
+    public void when_service_called_to_find_object_then_object_is_returned_from_DB () {
+        ObjectToSave returnObject = new ObjectToSave();
+        returnObject.setId("1");
+        returnObject.setFoo("foo");
+        when(basicMongoRepository.findOne(anyString())).thenReturn(returnObject);
+        basicMongoService.findOne("1");
+
+        verify(basicMongoRepository, times(1)).findOne("1");
     }
 }

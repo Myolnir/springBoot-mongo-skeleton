@@ -14,4 +14,8 @@ public class BasicMongoService {
     public void save (ObjectToSave objectToSave) {
         basicMongoRepository.save(objectToSave);
     }
+
+    public ObjectToSave findOne (String id) {
+        return basicMongoRepository.findOne(id);
+    }
 }
