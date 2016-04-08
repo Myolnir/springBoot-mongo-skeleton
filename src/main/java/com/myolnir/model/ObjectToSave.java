@@ -12,14 +12,14 @@ public class ObjectToSave {
     @Id
     private String id;
 
-    private String foo;
+    private String description;
 
-    public String getFoo () {
-        return foo;
+    public String getDescription () {
+        return description;
     }
 
-    public void setFoo (String foo) {
-        this.foo = foo;
+    public void setDescription (String description) {
+        this.description = description;
     }
 
     public String getId () {

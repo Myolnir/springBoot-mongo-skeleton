@@ -24,7 +24,7 @@ public class SpringBootMongoApplication implements CommandLineRunner {
     @Override
     public void run (String... args) throws Exception {
         ObjectToSave objectToSave = new ObjectToSave();
-        objectToSave.setFoo("foo");
+        objectToSave.setDescription("description");
         basicMongoService.save(objectToSave);
     }
 }

@@ -9,20 +9,20 @@ public class ObjectDto {
 
     private String id;
 
-    private String foo;
+    private String description;
 
     @JsonCreator
     private static ObjectDto deserialize (
           @JsonProperty ("id") String id,
-          @JsonProperty ("foo") String foo) {
-        return new ObjectDto(id, foo);
+          @JsonProperty ("description") String description) {
+        return new ObjectDto(id, description);
     }
 
     public ObjectDto (
           String id,
-          String foo) {
+          String description) {
         this.id = id;
-        this.foo = foo;
+        this.description = description;
     }
 
     public String getId () {
@@ -33,11 +33,11 @@ public class ObjectDto {
         this.id = id;
     }
 
-    public String getFoo () {
-        return foo;
+    public String getDescription () {
+        return description;
     }
 
-    public void setFoo (String foo) {
-        this.foo = foo;
+    public void setDescription (String description) {
+        this.description = description;
     }
 }

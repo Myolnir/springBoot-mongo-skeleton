@@ -24,7 +24,7 @@ public class BasicController {
     public void insertObjectToBD (@RequestBody ObjectDto object) {
         ObjectToSave objectToSave = new ObjectToSave();
         objectToSave.setId(object.getId());
-        objectToSave.setFoo(object.getFoo());
+        objectToSave.setDescription(object.getDescription());
         RelationalObject relationalObject = new RelationalObject("nombre", "comentarios");
         mongoService.save(objectToSave);
         relationalService.save(relationalObject);
@@ -34,6 +34,6 @@ public class BasicController {
     @ResponseStatus (HttpStatus.OK)
     public ObjectDto getObjectToBD (@PathVariable String id) {
         ObjectToSave objectToSave = mongoService.findOne(id);
-        return new ObjectDto(objectToSave.getId(), objectToSave.getFoo());
+        return new ObjectDto(objectToSave.getId(), objectToSave.getDescription());
     }
 }

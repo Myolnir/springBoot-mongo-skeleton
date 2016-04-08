@@ -7,7 +7,7 @@ public class TestUtils {
     protected static ObjectToSave createBasicObject () {
         ObjectToSave objectToSave = new ObjectToSave();
         objectToSave.setId("id");
-        objectToSave.setFoo("foo");
+        objectToSave.setDescription("description");
         return objectToSave;
     }
 }
