@@ -7,11 +7,13 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 import org.springframework.data.mongodb.repository.config.EnableMongoRepositories;
 
 @SpringBootApplication
 @EnableAutoConfiguration
 @EnableMongoRepositories
+@EnableEurekaClient
 public class SpringBootMongoApplication implements CommandLineRunner {
 
     @Autowired
